@@ -1,5 +1,328 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  overflow: auto;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: "IBM Plex Mono";
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 18px;
+  background-color: var(--background-color);
+}
+
+.decorated-zone {
+  padding: var(--padding);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+  box-sizing: border-box;
+  width: 25.04px;
+  height: 25px;
+  border-top: 1px solid var(--color-decorated-zone);
+  border-right: 1px solid var(--color-decorated-zone);
+
+  /* top: var(--padding);
+  right: calc(28px + var(--padding)); */
+  color: var(--rec);
+
+  line-height: 25px;
+  text-align: center;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  bottom: var(--padding);
+  left: var(--padding);
+  box-sizing: border-box;
+  width: 25.04px;
+  height: 25px;
+  border-bottom: 1px solid var(--color-decorated-zone);
+  border-left: 1px solid var(--color-decorated-zone);
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  justify-items: center;
+  align-items: center;
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-block-size: 668px;
+  block-size: 100vh;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu::before {
+  content: "REC";
+  position: absolute;
+  top: var(--padding);
+  right: calc(28px + var(--padding));
+  box-sizing: border-box;
+  color: var(--rec);
+  line-height: 25px;
+}
+
+.header__theme-menu::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--padding) + 8px);
+  right: calc(var(--padding) + 9px);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--rec);
+  background: var(--rec);
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 1.5px 13px;
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--border-button);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1.5px solid var(--color-decorated-zone);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--color-decorated-zone);
+  pointer-events: none;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  color: var(--color-decorated-zone);
+}
+
+.header__title {
+  color: var(--color-no-focus);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0px var(--subtitle-background-color);
+}
+
+.header__text {
+  width: 364px;
+  color: var(--color-subtitle);
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.title-decor {
+  background-color: var(--subtitle-background-color);
+}
+
+.main {
+  display: grid;
+  gap: 40px;
+}
+
+.main__section {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.main__section:first-child {
+  margin: 30px 0 0;
+}
+
+.main__section-title {
+  color: var(--color-title);
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.section-text {
+  padding: 10px 0 20px;
+
+  color: var(--color-text);
+
+  line-height: 23px;
+}
+
+.section-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--subtitle-background-color);
+}
+
+.section-link:hover {
+  border-bottom: 1.5px solid var(--color-text);
+}
+
+.section-link:focus-visible {
+  outline: 1px solid var(--color-text);
+}
+
+.section-link:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.section-article__title {
+  color: var(--color-subtitle);
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.section-article__topic {
+  color: var(--color-subtitle);
+  line-height: 23px;
+}
+
+.section-img {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.img {
+  display: block;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+}
+
+.img__street {
+  margin-bottom: 30px;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-block-size: 668px;
+  block-size: 100vh;
+}
+
+.footer__title {
+  color: var(--color-no-focus);
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 82.5%;
+
+  text-align: center;
+
+  text-shadow: 2px 2px 0px var(--subtitle-background-color);
+}
+
+@media (width > 768px) {
+  header.decorated-zone {
+    padding-left: 0;
+  }
+  .header {
+    justify-items: start;
+  }
+  .header__text {
+    justify-self: end;
+  }
+
+  .main {
+    gap: 60px;
+  }
+  .main__section:first-child {
+    margin: 30px 0 0;
+  }
+  .main__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .main__section-article {
+    grid-column: 2/4;
+  }
+  .main__section-what {
+    display: flex;
+    flex-direction: column;
+  }
+  .main__section-title {
+    width: 236px;
+  }
+
+  .section-img {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "title title title"
+      "img__sunset img__sunset img__ice"
+      "img__tape img__books img__ice"
+      "img__tape img__street img__street";
+    gap: 20px;
+  }
+
+  .section-article__title {
+    grid-area: title;
+  }
+  .img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .img__sunset {
+    grid-area: img__sunset;
+  }
+  .img__ice {
+    grid-area: img__ice;
+  }
+  .img__tape {
+    grid-area: img__tape;
+  }
+  .img__books {
+    grid-area: img__books;
+  }
+  .img__street {
+    grid-area: img__street;
+  }
+}
+
+@media (width > 1024px) {
+  .header__text {
+    width: 491px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: flex-start;
+  }
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .section-what {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
