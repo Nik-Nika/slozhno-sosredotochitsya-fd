@@ -160,10 +160,8 @@
 
 .section-text {
   padding: 10px 0 20px;
-
   color: var(--color-text);
-
-  line-height: 23px;
+  line-height: 23.4px;
 }
 
 .section-link {
@@ -318,6 +316,9 @@
   }
 
   .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
