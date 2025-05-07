@@ -3,7 +3,7 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 17.5px;
+  gap: 20px;
   overflow: auto;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: "IBM Plex Mono";
