@@ -1,6 +1,9 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   overflow: auto;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: "IBM Plex Mono";
@@ -9,9 +12,6 @@
   font-style: normal;
   background-color: var(--background-color);
   background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .decorated-zone {
@@ -55,7 +55,6 @@
   background-attachment: fixed;
   min-block-size: 668px;
   block-size: 100vh;
-
 }
 
 .header__theme-menu {
@@ -154,7 +153,6 @@
   color: var(--color-title);
   font-weight: 700;
   line-height: 23.4px;
-
 }
 
 .main__section-article {
