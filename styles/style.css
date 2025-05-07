@@ -7,9 +7,11 @@
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  line-height: 18px;
   background-color: var(--background-color);
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .decorated-zone {
@@ -53,7 +55,7 @@
   background-attachment: fixed;
   min-block-size: 668px;
   block-size: 100vh;
-  /* padding: var(--padding); */
+
 }
 
 .header__theme-menu {
@@ -130,7 +132,7 @@
   max-width: 364px;
   color: var(--color-subtitle);
   font-weight: 700;
-  line-height: 23px;
+  line-height: 23.4px;
 }
 
 .title-decor {
@@ -139,27 +141,29 @@
 
 .main {
   display: grid;
-  gap: 40px;
+  gap: 50px;
 }
 
 .main__section {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 10px;
-}
-
-.main__section:first-child {
-  margin: 30px 0 0;
 }
 
 .main__section-title {
+  padding-bottom: 20px;
   color: var(--color-title);
   font-weight: 700;
-  line-height: 23px;
+  line-height: 23.4px;
+
+}
+
+.main__section-article {
+  display: grid;
+  gap: 20px;
 }
 
 .section-text {
-  padding: 10px 0 20px;
+  padding-top: 10px;
   color: var(--color-text);
   line-height: 23.4px;
 }
@@ -185,12 +189,17 @@
 .section-article__title {
   color: var(--color-subtitle);
   font-weight: 700;
-  line-height: 23px;
+  line-height: 23.4px;
+}
+
+.repeat-title {
+  margin-bottom: 20px;
 }
 
 .section-article__topic {
   color: var(--color-subtitle);
-  line-height: 23px;
+  font-weight: 400;
+  line-height: 23.4px;
 }
 
 .section-img {
@@ -204,10 +213,6 @@
   width: 100vw;
   max-width: 100%;
   height: auto;
-}
-
-.img__street {
-  margin-bottom: 30px;
 }
 
 .footer {
@@ -230,12 +235,12 @@
 }
 
 @media (width >= 768px) {
-  header.decorated-zone {
-    padding-left: 0;
+  .page {
+    gap: 40px;
   }
 
-  .decorated-zone {
-    
+  header.decorated-zone {
+    padding-left: 0;
   }
 
   .header {
@@ -246,15 +251,11 @@
   }
 
   .main {
-    gap: 60px;
-  }
-  .main__section:first-child {
-    margin: 30px 0 0;
+    gap: 80px;
   }
   .main__section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
   }
   .main__section-article {
     grid-column: 2/4;
@@ -317,7 +318,6 @@
   .section-what {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
   }
 
   .header__title {
