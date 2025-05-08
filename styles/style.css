@@ -6,10 +6,6 @@
   gap: 25px;
   overflow: auto;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
@@ -46,6 +42,10 @@
 }
 
 .header {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -148,17 +148,28 @@
 }
 
 .main__section-title {
-  color: var(--color-title);
+  font-family: "IBM Plex Mono", sans-serif;
+  font-size: 18px;
   font-weight: 700;
+  font-style: normal;
+  color: var(--color-title);
   line-height: 23.4px;
 }
 
 .main__section-article {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
   display: grid;
   gap: 20px;
 }
 
 .section-text {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
   padding-top: 10px;
   color: var(--color-text);
   line-height: 23.4px;
@@ -183,6 +194,10 @@
 }
 
 .section-article__title {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
   color: var(--color-subtitle);
   font-weight: 700;
   line-height: 23.4px;
@@ -212,6 +227,10 @@
 }
 
 .footer {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
   position: relative;
   display: grid;
   align-items: center;
