@@ -6,15 +6,18 @@
   gap: 25px;
   overflow: auto;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", serif;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
 }
 
-.decorated-zone {
+.padding {
   padding: var(--padding);
 }
 
@@ -46,13 +49,7 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  justify-items: center;
   align-items: center;
-  background-image: var(--background-image);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   min-block-size: 668px;
   block-size: 100vh;
 }
@@ -62,7 +59,7 @@
   align-self: center;
 }
 
-.header__theme-menu::before {
+.header__rec::before {
   content: "REC";
   position: absolute;
   top: var(--padding);
@@ -72,7 +69,7 @@
   line-height: 25px;
 }
 
-.header__theme-menu::after {
+.header__rec::after {
   content: "";
   position: absolute;
   top: calc(var(--padding) + 8px);
@@ -89,6 +86,7 @@
   padding: 1.5px 13px;
   text-transform: lowercase;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
@@ -175,13 +173,13 @@
   border-bottom: 1.5px solid var(--color-text);
 }
 
-.section-link:focus-visible {
-  outline: 1px solid var(--color-text);
-}
-
 .section-link:focus {
   outline: none;
   text-decoration: none;
+}
+
+.section-link:focus-visible {
+  outline: 1px solid var(--color-text);
 }
 
 .section-article__title {
@@ -224,11 +222,9 @@
 .footer__title {
   color: var(--color-no-focus);
   font-weight: 700;
-  font-size: 116px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
-
   text-align: center;
-
   text-shadow: 2px 2px 0px var(--subtitle-background-color);
 }
 
@@ -237,13 +233,14 @@
     gap: 40px;
   }
 
-  header.decorated-zone {
+  header.padding {
     padding-left: 0;
   }
 
-  .header {
+  .header-title {
     justify-items: start;
   }
+
   .header__text {
     justify-self: end;
   }
@@ -251,24 +248,30 @@
   .main {
     gap: 80px;
   }
+  
   .main__section {
     display: grid;
     grid-template-columns: 1fr 2fr;
   }
-  .main__section-article {
+
+  .main__section-article-block {
+    grid-template-areas: "title title title";
     grid-column: 2/4;
     padding-left: 5px;
   }
+
   .main__section-what {
     display: grid;
     flex-direction: column;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: min-content 1fr;
   }
+
   .section-what {
     grid-column: 1/4;
     grid-row: 2;
   }
+
   .title-what {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column: 1;
@@ -279,31 +282,46 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       "title title title"
+      "section-img section-img section-img";
+    gap: 20px;
+  }
+
+  .section-img-bloc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
       "img__sunset img__sunset img__ice"
       "img__tape img__books img__ice"
       "img__tape img__street img__street";
+    grid-area: section-img;
     gap: 20px;
   }
 
   .section-article__title {
     grid-area: title;
   }
+
   .img {
     height: 100%;
     object-fit: cover;
   }
+
   .img__sunset {
     grid-area: img__sunset;
   }
+
   .img__ice {
     grid-area: img__ice;
   }
+
   .img__tape {
     grid-area: img__tape;
   }
+
   .img__books {
     grid-area: img__books;
   }
+
   .img__street {
     grid-area: img__street;
   }
@@ -314,10 +332,11 @@
     max-width: 491px;
   }
 
-  .header__theme-menu {
+  .header-section {
     justify-self: center;
     align-self: flex-start;
   }
+
   .header__theme-menu-list {
     flex-direction: row;
   }
@@ -339,6 +358,7 @@
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
+
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
