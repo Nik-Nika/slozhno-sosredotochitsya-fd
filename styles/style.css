@@ -195,7 +195,6 @@
 
 .section-article__title {
   font-family: "IBM Plex Mono", sans-serif;
-  font-weight: 400;
   font-size: 18px;
   font-style: normal;
   color: var(--color-subtitle);
@@ -213,7 +212,7 @@
   line-height: 23.4px;
 }
 
-.section-img {
+.section-img-bloc {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -367,11 +366,13 @@
 
   .main__section-article {
     padding-left: 0;
+    grid-column: 2/4;
   }
 
   .section-what {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1/4;
   }
 
   .header__title {

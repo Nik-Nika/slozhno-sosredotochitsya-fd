@@ -27,7 +27,6 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #fff1f7;
-    --background-image: url(../images/cover-image-light.png);
     --subtitle-background-color: #ff8dcb;
     --color-subtitle: #353430;
     --color-no-focus: #ffc2e6;
@@ -36,6 +35,10 @@
     --color-title: #353430;
     --rec: #00000000;
     --border-button: #32312d66;
+  }
+
+  .page {
+    --background-image: url(../images/cover-image-light.png);
   }
 }
 
