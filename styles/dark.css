@@ -21,10 +21,7 @@
   --border-button: #ff007066;
 }
 
-.page {
-  --background-image: url(../images/cover-image-dark.png);
-}
 
-/* .theme-dark .page {
-  Вам также нужно будет написать ряд подобных селекторов
-} */
+.theme-dark .page {
+  --background-image: url(../images/cover-image-dark.png)
+}

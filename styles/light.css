@@ -20,10 +20,6 @@
   --border-button: #32312d66;
 }
 
-.page {
-  --background-image: url(../images/cover-image-light.png);
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #fff1f7;
@@ -37,11 +33,11 @@
     --border-button: #32312d66;
   }
 
-  .page {
+  .theme-light .page {
     --background-image: url(../images/cover-image-light.png);
   }
 }
 
-/* .theme-light .page {
-  Вам также нужно будет написать ряд подобных селекторов
-} */
+.theme-light .page {
+  --background-image: url(../images/cover-image-light.png);
+}

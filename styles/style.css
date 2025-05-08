@@ -218,6 +218,11 @@
   gap: 10px;
 }
 
+.section-img {
+  display: grid;
+  gap: 10px;
+}
+
 .img {
   display: block;
   width: 100vw;
