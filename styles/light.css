@@ -33,7 +33,7 @@
     --border-button: #32312d66;
   }
 
-  .theme-light .page {
+  .page {
     --background-image: url(../images/cover-image-light.png);
   }
 }
