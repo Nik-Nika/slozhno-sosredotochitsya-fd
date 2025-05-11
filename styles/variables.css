@@ -13,13 +13,10 @@
   --color-title: #ff0070;
   --rec: #ff0070;
   --border-button: #ff007066;
-  
+  --background-image: url(../images/cover-image-dark.png);
   --padding: 10px;
 }
 
-.page {
-  --background-image: url(../images/cover-image-dark.png);
-}
 
 @media (width >= 768px) {
   :root {
