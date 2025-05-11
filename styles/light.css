@@ -18,6 +18,7 @@
   --color-title: #353430;
   --rec: #00000000;
   --border-button: #32312d66;
+  --background-image: url(../images/cover-image-light.png);
 }
 
 @media (prefers-color-scheme: light) {
@@ -31,13 +32,6 @@
     --color-title: #353430;
     --rec: #00000000;
     --border-button: #32312d66;
+    --background-image: url(../images/cover-image-light.png);
   }
-
-  .page {
-    --background-image: url(../images/cover-image-light.png );
-  }
-}
-
-.theme-light .page {
-  --background-image: url(../images/cover-image-light.png);
 }
